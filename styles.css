@@ -1,0 +1,106 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    /* border: 1px solid black; */
+}
+
+body {
+    background-color: lightgray;
+    height: 100vh;
+    display: flex;
+}
+
+.img-container {
+    flex: 1 1 35%;
+    /* TODO: origionaly used an img element with height=100%;
+    it fucked things up an caused a scrollbar, don't know why, isolate example and ask*/
+    background-image: url('mickey.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    /* to get the logo text centered */
+    text-align: center;
+}
+
+/* TODO: import external font for this section */
+.logo {
+    position: relative;
+    top: 40%;
+    opacity: 0.30;
+    background-color: black;
+    height: 100px;
+}
+
+.logoText {
+    position: relative;
+    top: calc(40% - 100px);
+    font-size: 64px;
+    color: white;
+}
+
+.stuff {
+    flex: 1 1 65%;
+    align-self: center;
+    margin: 16px;
+}
+
+form {
+    background-color: white;
+    margin-top: 32px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.inputs>div {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs>div,
+button,
+p {
+    margin: 8px;
+}
+
+.inputs input,
+button {
+    border-radius: 4px;
+}
+
+.inputs label,
+.inputs input {
+    width: 40ch;
+}
+
+.inputs input {
+    border-color: lightgray;
+}
+
+.inputs label {
+    /* change font */
+}
+
+button {
+    padding: 1ch 4ch;
+    font-size: medium;
+}
+
+hr {
+    width: 100%;
+}

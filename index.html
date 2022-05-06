@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="img-container">
+        <div class="logo"></div>
+        <!-- has to be outside logo div to avoid opacity, children can't override it -->
+        <p class="logoText">logo</p>
+    </div>
+
+    <div class="stuff">
+        
+        <p>blah <em>blah</em> blah</p>
+        <p>You <em>know</em> you want to.</p>
+
+        <form action="" method="post" id="theForm">
+            <div class="inputs">
+                <div>
+                    <label for="firstName">FIRST NAME</label>
+                    <input type="text" name="firstName" id="firstName">
+                </div>
+                <div>
+                    <label for="firstName">LAST NAME</label>
+                    <input type="text" name="lastName" id="lastName">
+                </div>
+                <div>
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="phoneNum">PHONE NUMBER</label>
+                    <input type="tel" name="phoneNum" id="phoneNum">
+                </div>
+                <div>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <label for="confirm">CONFIRM PASSWORD</label>
+                    <input type="password" name="confirm" id="confirm">
+                </div>
+            </div>
+        </form>
+
+        <hr>
+
+        <button type="submit" form="theForm">Create Account</button>
+
+        <p>Already have an account? Log in</p>
+
+    </div>
+
+</body>
+
+</html>
