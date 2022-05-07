@@ -1,3 +1,10 @@
+:root {
+    --space-1: 8px;
+    --space-2: 16px;
+    --banner-height: 100px;
+    --banner-top: 40%;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -20,6 +27,12 @@ body {
     display: flex;
 }
 
+.inputs>div,
+.stuff>p,
+button {
+    margin: var(--space-1);
+}
+
 .img-container {
     flex: 1 1 35%;
     /* TODO: origionaly used an img element with height=100%;
@@ -32,20 +45,31 @@ body {
     text-align: center;
 }
 
-/* TODO: import external font for this section */
-.logo {
+.banner {
     position: relative;
-    top: 40%;
-    opacity: 0.30;
+    top: var(--banner-top);
+    opacity: 0.50;
     background-color: black;
-    height: 100px;
+    height: var(--banner-height);
 }
 
-.logoText {
+.bannerText {
+    display: inline;
     position: relative;
-    top: calc(40% - 100px);
+    height: var(--banner-height);
+    top: calc(var(--banner-top) - var(--banner-height));
+    font-family: 'Shizuru', cursive;
     font-size: 64px;
     color: white;
+    /* border: 1px solid red; */
+}
+
+#catFace {
+    display: inline;
+    position: relative;
+    height: var(--banner-height);
+    top: calc(var(--banner-top) - var(--banner-height));
+    border: 1px solid green;
 }
 
 .stuff {
@@ -70,12 +94,6 @@ form {
     flex-basis: 40%;
     display: flex;
     flex-direction: column;
-}
-
-.inputs>div,
-button,
-p {
-    margin: 8px;
 }
 
 .inputs input,
