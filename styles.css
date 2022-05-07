@@ -41,11 +41,9 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top left;
-    /* to get the logo text centered */
-    text-align: center;
 }
 
-.banner {
+.banner-bar {
     position: relative;
     top: var(--banner-top);
     opacity: 0.50;
@@ -53,24 +51,27 @@ button {
     height: var(--banner-height);
 }
 
-.bannerText {
-    display: inline;
+.banner-content {
     position: relative;
     height: var(--banner-height);
     top: calc(var(--banner-top) - var(--banner-height));
+    display: flex;
+    justify-content: center;
     font-family: 'Shizuru', cursive;
     font-size: 64px;
     color: white;
-    /* border: 1px solid red; */
 }
 
-#catFace {
-    display: inline;
+.banner-content>img {
+    /* full height was too big, tweeked it to be smaller */
     position: relative;
-    height: var(--banner-height);
-    top: calc(var(--banner-top) - var(--banner-height));
-    border: 1px solid green;
+    height: 70%;
+    top: 15%;
+    /* png is black lines, i want white */
+    filter: invert(100%);
+    margin-right: var(--space-1);
 }
+
 
 .stuff {
     flex: 1 1 65%;
@@ -91,7 +92,8 @@ form {
 }
 
 .inputs>div {
-    flex-basis: 40%;
+    /* picked this size to force it wrap at 2 inputs on large screen */
+    flex-basis: 40%;    
     display: flex;
     flex-direction: column;
 }
@@ -103,7 +105,7 @@ button {
 
 .inputs label,
 .inputs input {
-    width: 40ch;
+    width: 30ch;
 }
 
 .inputs input {
@@ -121,4 +123,18 @@ button {
 
 hr {
     width: 100%;
+}
+
+.footer {
+    background-color: gray;
+    color: lightgray;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: end;
+}
+
+.footer>a:link,
+.footer>a:visited {
+    color: lightblue;
 }
