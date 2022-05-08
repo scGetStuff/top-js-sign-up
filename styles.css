@@ -1,8 +1,11 @@
 :root {
     --space-1: 8px;
     --space-2: 16px;
+    --space-3: 32px;
     --banner-height: 100px;
     --banner-top: 40%;
+    --border-color: #E5E7EB;
+    --fur-color: rgb(218, 197, 154);/* random sample pulled from pic*/
 }
 
 html {
@@ -28,7 +31,7 @@ body {
 }
 
 .inputs>div,
-.stuff>p,
+.content-container>p,
 button {
     margin: var(--space-1);
 }
@@ -72,16 +75,15 @@ button {
     margin-right: var(--space-1);
 }
 
-
-.stuff {
+.content-container {
     flex: 1 1 65%;
     align-self: center;
-    margin: 16px;
+    margin: var(--space-2);
 }
 
 form {
-    background-color: white;
-    margin-top: 32px;
+    background-color: whitesmoke;
+    margin-top: var(--space-3);
 }
 
 .inputs {
@@ -93,36 +95,47 @@ form {
 
 .inputs>div {
     /* picked this size to force it wrap at 2 inputs on large screen */
-    flex-basis: 40%;    
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
 }
 
-.inputs input,
-button {
-    border-radius: 4px;
+button,
+input {
+    font-family: inherit;
+    font-size: 100%;
 }
 
-.inputs label,
-.inputs input {
+label,
+input {
     width: 30ch;
 }
 
-.inputs input {
-    border-color: lightgray;
+input {
+    appearance: none;
+    border-color: var(--border-color);
+    border-style: solid;
+
 }
 
-.inputs label {
-    /* change font */
+input:focus {
+    outline: 2px solid blue;
+    box-shadow: 3px 3px 3px blue;
+}
+
+input:required {
+    outline: 2px solid red;
+}
+
+.error {
+    outline: 2px solid red;
 }
 
 button {
+    border-radius: 8px;
     padding: 1ch 4ch;
-    font-size: medium;
-}
-
-hr {
-    width: 100%;
+    font-size: large;
+    background-color: var(--fur-color);
 }
 
 .footer {

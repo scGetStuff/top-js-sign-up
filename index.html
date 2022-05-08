@@ -24,12 +24,12 @@
         </div>
     </div>
 
-    <div class="stuff">
+    <div class="content-container">
 
         <p>blah <em>blah</em> blah</p>
         <p>You <em>know</em> you want to.</p>
 
-        <form action="" method="post" id="theForm">
+        <form action="" method="post" id="theForm" autocomplete="off">
             <div class="inputs">
                 <div>
                     <label for="firstName">FIRST NAME</label>
@@ -49,16 +49,14 @@
                 </div>
                 <div>
                     <label for="password">PASSWORD</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" required>
                 </div>
                 <div>
                     <label for="confirm">CONFIRM PASSWORD</label>
-                    <input type="password" name="confirm" id="confirm">
+                    <input autocomplete=""  type="password" name="confirm" id="confirm" required>
                 </div>
             </div>
         </form>
-
-        <hr>
 
         <button type="submit" form="theForm">Create Account</button>
 

@@ -3,10 +3,7 @@ The Odin Project, Full Stack JavaScript Path, Intermediate CSS Concepts, Project
 
 
 TODO:
-- do i care about the button color?
 - format and content of text blah blah stuff
 - more styling for inputs
-    - replace default input look
     - validation
-    - selection, blue
 
