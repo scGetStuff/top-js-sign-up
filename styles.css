@@ -5,7 +5,8 @@
     --banner-height: 100px;
     --banner-top: 40%;
     --border-color: #E5E7EB;
-    --fur-color: rgb(218, 197, 154);/* random sample pulled from pic*/
+    /* random sample pulled from pic*/
+    --fur-color: rgb(218, 197, 154);
 }
 
 html {
@@ -30,80 +31,84 @@ body {
     display: flex;
 }
 
-.inputs>div,
-.content-container>p,
-button {
-    margin: var(--space-1);
-}
-
-.img-container {
-    flex: 1 1 35%;
-    /* TODO: origionaly used an img element with height=100%;
-    it fucked things up an caused a scrollbar, don't know why, isolate example and ask*/
+.big-cat-face {
+    flex: 1;
     background-image: url('mickey.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top left;
 }
 
-.banner-bar {
-    position: relative;
-    top: var(--banner-top);
-    opacity: 0.50;
-    background-color: black;
-    height: var(--banner-height);
-}
-
+.banner-bar,
 .banner-content {
     position: relative;
     height: var(--banner-height);
+}
+
+.banner-bar {
+    top: var(--banner-top);
+    opacity: 0.50;
+    background-color: black;
+}
+
+.banner-content {
     top: calc(var(--banner-top) - var(--banner-height));
     display: flex;
     justify-content: center;
     font-family: 'Shizuru', cursive;
     font-size: 64px;
     color: white;
+    align-items: center;
 }
 
 .banner-content>img {
-    /* full height was too big, tweeked it to be smaller */
-    position: relative;
+    /* full height was too big */
     height: 70%;
-    top: 15%;
-    /* png is black lines, i want white */
+    /* png has black lines, i want white */
     filter: invert(100%);
     margin-right: var(--space-1);
 }
 
+/* the text seems to have uneven padding that i can't control
+it was not verticaly centered properly */
+.banner-content>span {
+    position: relative;
+    top: -10px;
+}
+
 .content-container {
-    flex: 1 1 65%;
+    flex: 2;
     align-self: center;
-    margin: var(--space-2);
+    padding: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.words {
+    font-size: larger;
+    min-width: 45ch;
+    max-width: 75ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
 }
 
 form {
-    background-color: whitesmoke;
     margin-top: var(--space-3);
-}
-
-.inputs {
+    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: var(--space-2);
 }
 
-.inputs>div {
-    /* picked this size to force it wrap at 2 inputs on large screen */
-    flex-basis: 40%;
+form>div {
+    /* picked this size to force it wrap at 2 inputs */
+    flex-basis: 34%;
     display: flex;
     flex-direction: column;
-}
-
-button,
-input {
-    font-family: inherit;
-    font-size: 100%;
 }
 
 label,
@@ -112,10 +117,10 @@ input {
 }
 
 input {
-    appearance: none;
+    font-family: inherit;
+    font-size: 100%;
     border-color: var(--border-color);
     border-style: solid;
-
 }
 
 input:focus {
@@ -127,11 +132,19 @@ input:required {
     outline: 2px solid red;
 }
 
+input:invalid {
+    /* outline: 2px solid purple; */
+}
+
 .error {
     outline: 2px solid red;
 }
 
 button {
+    align-self: flex-start;
+    margin-top: var(--space-3);
+    font-family: inherit;
+    font-size: 100%;
     border-radius: 8px;
     padding: 1ch 4ch;
     font-size: large;
@@ -147,7 +160,12 @@ button {
     text-align: end;
 }
 
-.footer>a:link,
-.footer>a:visited {
-    color: lightblue;
+a {
+    font-size: large;
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: black;
 }

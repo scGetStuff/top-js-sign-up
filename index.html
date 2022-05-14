@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="img-container">
+    <div class="big-cat-face">
         <div class="banner-bar"></div>
         <!-- has to be outside banner div to avoid opacity, children can't override it -->
         <div class="banner-content">
@@ -26,45 +26,48 @@
 
     <div class="content-container">
 
-        <p>blah <em>blah</em> blah</p>
-        <p>You <em>know</em> you want to.</p>
+        <div class="words">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi autem ad laudantium quisquam, fugiat,
+                expedita harum eos perspiciatis odio quibusdam accusantium voluptatem earum, ab asperiores maiores
+                delectus at tempora. Quisquam!</p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
 
-        <form action="" method="post" id="theForm" autocomplete="off">
-            <div class="inputs">
-                <div>
-                    <label for="firstName">FIRST NAME</label>
-                    <input type="text" name="firstName" id="firstName">
-                </div>
-                <div>
-                    <label for="firstName">LAST NAME</label>
-                    <input type="text" name="lastName" id="lastName">
-                </div>
-                <div>
-                    <label for="email">EMAIL</label>
-                    <input type="email" name="email" id="email">
-                </div>
-                <div>
-                    <label for="phoneNum">PHONE NUMBER</label>
-                    <input type="tel" name="phoneNum" id="phoneNum">
-                </div>
-                <div>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <div>
-                    <label for="confirm">CONFIRM PASSWORD</label>
-                    <input autocomplete=""  type="password" name="confirm" id="confirm" required>
-                </div>
+        <form action="#" method="post" id="theForm">
+            <div>
+                <label for="firstName">FIRST NAME</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <div>
+                <label for="firstName">LAST NAME</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            <div>
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="phoneNum">PHONE NUMBER</label>
+                <input type="tel" name="phoneNum" id="phoneNum">
+            </div>
+            <div>
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <label for="confirm">CONFIRM PASSWORD</label>
+                <input autocomplete="" type="password" name="confirm" id="confirm" required>
             </div>
         </form>
 
         <button type="submit" form="theForm">Create Account</button>
-
-        <p>Already have an account? Log in</p>
+        <p>Already have an account? <a href="#">Log in</a></p>
 
     </div>
 
-    <div class="footer">Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
+    <div class="footer">Icon made from
+        <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0
+    </div>
 
 </body>
 

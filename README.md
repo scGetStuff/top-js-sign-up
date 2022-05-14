@@ -3,7 +3,5 @@ The Odin Project, Full Stack JavaScript Path, Intermediate CSS Concepts, Project
 
 
 TODO:
-- format and content of text blah blah stuff
-- more styling for inputs
-    - validation
+- validation
 
