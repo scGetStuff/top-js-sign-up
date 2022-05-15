@@ -48,7 +48,9 @@
             </div>
             <div>
                 <label for="phoneNum">PHONE NUMBER</label>
-                <input type="tel" name="phoneNum" id="phoneNum">
+                <input type="tel" name="phoneNum" id="phoneNum" placeholder="###-###-####"
+                    pattern="[1-9]{3}-[1-9]{3}-[1-9]{4}"
+                    title="This is not intended to be a real validation, just me playing with pattern">
             </div>
             <div>
                 <label for="password">PASSWORD</label>

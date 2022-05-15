@@ -4,4 +4,4 @@ The Odin Project, Full Stack JavaScript Path, Intermediate CSS Concepts, Project
 
 TODO:
 - validation
-
+- bug with centering content panel
