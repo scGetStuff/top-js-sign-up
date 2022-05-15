@@ -1,4 +1,5 @@
 :root {
+    /* TODO: stop using pixles? */
     --space-1: 8px;
     --space-2: 16px;
     --space-3: 32px;
@@ -32,7 +33,7 @@ body {
 }
 
 .big-cat-face {
-    flex: 1;
+    width: 30%;
     background-image: url('mickey.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,69 +57,87 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Shizuru', cursive;
-    font-size: 64px;
     color: white;
     align-items: center;
+    /* responsive text thingy */
+    font-size: 5vw;
 }
 
 .banner-content>img {
-    /* full height was too big */
-    height: 70%;
     /* png has black lines, i want white */
     filter: invert(100%);
-    margin-right: var(--space-1);
+    /* margin-right: var(--space-1); */
+    /* deliberatly changed to em when i made the parent font size responsive */
+    margin-right: 0.25em;
+    height: 5vw;
 }
 
 /* the text seems to have uneven padding that i can't control
 it was not verticaly centered properly */
 .banner-content>span {
     position: relative;
-    top: -10px;
+    top: -1vh;
 }
 
 .content-container {
-    flex: 2;
-    align-self: center;
+    flex-grow: 1;
+    overflow: auto;
     padding: var(--space-2);
     display: flex;
     flex-direction: column;
+    /* TODO: center makes content get cliped when scroll is needed  */
+    /* justify-content: center; */
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: var(--space-1);
 }
 
 .words {
-    font-size: larger;
-    min-width: 45ch;
-    max-width: 75ch;
+    font-size: max(1.5vw, 16px);
+    min-width: 45ch;    
+    max-width: 65ch;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
 }
 
 form {
+    /* wrap at 2 inputs, shrink to 1 */
+    min-width: 30ch;
+    max-width: 65ch;
+    flex-shrink: 1;
+
     margin-top: var(--space-3);
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
     gap: var(--space-2);
 }
 
 form>div {
-    /* picked this size to force it wrap at 2 inputs */
-    flex-basis: 34%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 label,
 input {
     width: 30ch;
+    padding: 5px;
 }
 
+button,
 input {
     font-family: inherit;
     font-size: 100%;
+}
+
+input {
     border-color: var(--border-color);
     border-style: solid;
 }
@@ -129,11 +148,11 @@ input:focus {
 }
 
 input:required {
-    outline: 2px solid red;
+    outline: 2px solid purple;
 }
 
 input:invalid {
-    /* outline: 2px solid purple; */
+    outline: 2px solid red;
 }
 
 .error {
@@ -143,8 +162,6 @@ input:invalid {
 button {
     align-self: flex-start;
     margin-top: var(--space-3);
-    font-family: inherit;
-    font-size: 100%;
     border-radius: 8px;
     padding: 1ch 4ch;
     font-size: large;
