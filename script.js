@@ -12,7 +12,7 @@ function isMatchingPassword() {
     const message = document.getElementById('message');
 
     if (password.value === confirm.value) {
-        message.innerText = "";
+        message.innerHTML = "&nbsp;";
         return true;
     }
 
