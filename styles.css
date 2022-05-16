@@ -142,7 +142,8 @@ input {
     border-style: solid;
 }
 
-input:required:valid {
+input:required:valid,
+input:optional:not(:placeholder-shown) {
     outline: 2px solid green;
 }
 
@@ -164,7 +165,6 @@ input:focus {
 
 button {
     align-self: flex-start;
-    margin-top: var(--space-3);
     border-radius: 8px;
     padding: 1ch 4ch;
     font-size: large;
@@ -188,4 +188,8 @@ a {
 a:link,
 a:visited {
     color: black;
+}
+
+#message {
+    color: red;
 }
