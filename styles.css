@@ -1,12 +1,10 @@
 :root {
-    /* TODO: stop using pixles? */
     --space-1: 8px;
     --space-2: 16px;
     --space-3: 32px;
     --banner-height: 100px;
     --banner-top: 40%;
     --border-color: #E5E7EB;
-    /* random sample pulled from pic*/
     --fur-color: rgb(218, 197, 154);
 }
 
@@ -20,10 +18,6 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-}
-
-body * {
-    /* border: 1px solid black; */
 }
 
 body {
@@ -56,33 +50,30 @@ body {
     top: calc(var(--banner-top) - var(--banner-height));
     display: flex;
     justify-content: center;
-    font-family: 'Shizuru', cursive;
+    font-family: Shizuru, cursive, sans-serif;
     color: white;
     align-items: center;
-    /* responsive text thingy */
     font-size: 5vw;
 }
 
 .banner-content>img {
-    /* png has black lines, i want white */
     filter: invert(100%);
-    /* deliberatly changed to em when i made the parent font size responsive */
-    /* margin-right: var(--space-1); */
     margin-right: 0.25em;
     height: 5vw;
 }
 
-/* the text seems to have uneven padding that i can't control
-it was not verticaly centered properly */
+/* the Shizuru & cursive fonts have uneven padding that i can't control, 
+not verticaly centered properly 
+TODO: is there some way to conditionaly offset?
+*/
 .banner-content>span {
     position: relative;
     top: -1vh;
 }
 
 /* added a container to try to isolate my scroll issue when centering content
-nothing usefull yet */
+nothing usefull yet, going to reprocuce in a simpler version and post question */
 .scroll-fix {
-    /* border: 2px solid red; */
     padding: var(--space-2);
     overflow: auto;
     flex-grow: 1;
@@ -90,7 +81,6 @@ nothing usefull yet */
 }
 
 .content-container {
-    /* border: 2px solid yellow; */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -109,11 +99,9 @@ nothing usefull yet */
 }
 
 form {
-    /* wrap at 2 inputs, shrink to 1 */
+    /* wrap at 2 inputs, shrink to 1, probably should use grid, but i wanted to force it to work */
     min-width: 32ch;
     max-width: 65ch;
-
-    background-color: whitesmoke;
     margin-top: var(--space-3);
     display: flex;
     flex-direction: row;
@@ -147,7 +135,7 @@ input:optional:not(:placeholder-shown) {
     outline: 2px solid green;
 }
 
-/* required is invalid by default, obnoxious having everything start red
+/* required inputs are invalid by default, obnoxious having everything start red
 i use the placeholder crap to work around it, untill :blank works
 */
 input:invalid:not(:placeholder-shown) {
